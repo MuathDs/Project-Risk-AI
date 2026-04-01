@@ -93,7 +93,7 @@ with tab2:
                 
                 st.divider()
                 st.subheader("نتائج التحليل:")
-                st.dataframe(df.style.applymap(lambda x: 'color: red' if 'خطر' in str(x) else 'color: green', subset=['Status']))
+                st.dataframe(df.style.map(lambda x: 'color: red' if 'خطر' in str(x) else 'color: green', subset=['Status']))
                 
                 # خيار تحميل النتائج
                 csv_data = df.to_csv(index=False).encode('utf-8-sig')
